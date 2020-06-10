@@ -89,6 +89,10 @@ public class TasksListFormE1 extends Form {
                Details.addActionListener((evt) -> {
                  new ParticiperEvent(previous,event).show();
                   });
+                    Button Avis= new Button("Avis");
+                  Avis.addActionListener((evt) -> {
+                     TaskServiceE.getInstance().AvisEvent(event); 
+                       });
                 
                  Button participer = new Button("Participer");
                  SpanLabel ligne = new SpanLabel("__________________________________________   ", "BlueSeparatorLine" );
@@ -115,6 +119,9 @@ public class TasksListFormE1 extends Form {
                   new TasksListFormE1(previous).show();
                   
         });
+                 
+                 
+                //  Button Avis= new Button("Avis");
                 
                   
               
@@ -128,6 +135,7 @@ public class TasksListFormE1 extends Form {
                  if(event.getNbrPlaceDispo()!=0)
                  { C8.add(participer);}
                  C8.add(Details);
+                 C8.add(Avis);
               // C4.add(branche);
               C8.add(ligne);
               //  C5.add(C1);

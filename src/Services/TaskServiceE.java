@@ -214,6 +214,28 @@ dateTimePicker.setDate(new Date());
        
         
     }
+            public boolean AvisEvent(Event event) {
+   // public boolean ParticiperClub(Club c){
+
+          //String url =  Statics.BASE_URL + "/event/participa/" +event.getId();
+        // request.setUrl(url);
+     //   request.setPost(false);
+        request.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                responseResult = request.getResponseCode() == 200; //Code HTTP 200 OK
+                request.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(request);
+      Message m = new Message("");
+
+       Display.getInstance().sendMessage(new String[] {"Dorsaf.blaghgi@esprit.tn"}, "Subject of message", m);
+        return responseResult;
+    
+       
+        
+    }
        
     }
 
