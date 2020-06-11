@@ -27,6 +27,7 @@ import com.codename1.io.rest.Rest;
 import com.codename1.messaging.Message;
 import com.codename1.notifications.LocalNotification;
 import com.codename1.ui.Calendar;
+import com.codename1.ui.Dialog;
 import com.codename1.ui.Display;
 import static com.codename1.ui.events.ActionEvent.Type.Response;
 import com.codename1.ui.events.ActionListener;
@@ -189,7 +190,17 @@ public class TaskService {
             }
         });
         NetworkManager.getInstance().addToQueueAndWait(request);
-       
+        
+             LocalNotification n = new LocalNotification();
+        n.setId("demo-notification");
+        n.setAlertBody("It's time to take a break and look at me");
+        n.setAlertTitle("Break Time!");
+          Display.getInstance().scheduleLocalNotification(
+                n,
+                System.currentTimeMillis() + 10 * 1000, // fire date/time
+                LocalNotification.REPEAT_MINUTE  // Whether to repeat and what frequency
+        );
+   
         return responseResult;
     }
   
@@ -212,7 +223,32 @@ public class TaskService {
         return clubs;
 }
     
-    
+      public boolean NotClub(Club c) {
+     //  String url = Statics.BASE_URL + "/club/delet/"+c.getId();
+      //  request.setUrl(url);
+        request.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                responseResult = request.getResponseCode() == 200; //Code HTTP 200 OK
+                request.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(request);
+       
+        if(Display.getInstance().isMinimized()) {
+            Display.getInstance().callSerially(() -> {
+                Dialog.show("Welcome", "Thanks for arriving", "OK", null);
+            });
+        } else {
+            LocalNotification ln = new LocalNotification();
+            ln.setId("LnMessage");
+            ln.setAlertTitle("Welcome");
+            ln.setAlertBody("Thanks for arriving!");
+            Display.getInstance().scheduleLocalNotification(ln, 100, LocalNotification.REPEAT_NONE);
+        }
+     
+        return responseResult;
+    }
       
   
 }

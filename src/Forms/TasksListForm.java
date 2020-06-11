@@ -7,6 +7,7 @@ package Forms;
 
 import Models.Club;
 import Services.TaskService;
+import Services.TaskServiceE;
 import com.codename1.charts.ChartComponent;
 import com.codename1.charts.models.CategorySeries;
 import com.codename1.charts.renderers.DefaultRenderer;
@@ -111,6 +112,7 @@ public class TasksListForm extends Form {
                         }
                       new TasksListForm(previous).show();
             });
+                    
         
         
          Button modifier = new Button("modifier");
@@ -168,7 +170,7 @@ public class TasksListForm extends Form {
             //    C1.add(branche);
                 C6.add(supprimer);
                 C6.add(modifier);
-               // C6.add(stat);
+              //  C6.add(notif);
                 C6.add(ligne);
                C4.add(branche);
               //  C5.add(C1);
