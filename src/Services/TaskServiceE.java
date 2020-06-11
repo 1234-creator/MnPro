@@ -230,7 +230,7 @@ dateTimePicker.setDate(new Date());
         NetworkManager.getInstance().addToQueueAndWait(request);
       Message m = new Message("");
 
-       Display.getInstance().sendMessage(new String[] {"Dorsaf.blaghgi@esprit.tn"}, "Donner un avis concernant notre event", m);
+       Display.getInstance().sendMessage(new String[] {""}, "Donner un avis concernant notre event", m);
         return responseResult;
     
        

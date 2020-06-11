@@ -11,7 +11,13 @@ import Services.TaskService;
 import Services.TaskServiceE;
 import com.codename1.components.ImageViewer;
 import com.codename1.components.SpanLabel;
+import com.codename1.components.ToastBar;
+import com.codename1.io.File;
+import com.codename1.io.FileSystemStorage;
+import com.codename1.io.Log;
+import com.codename1.media.MediaManager;
 import com.codename1.ui.Button;
+import com.codename1.ui.CN;
 import com.codename1.ui.ComboBox;
 import static com.codename1.ui.Component.CENTER;
 import static com.codename1.ui.Component.TOP;
@@ -27,6 +33,7 @@ import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
@@ -121,6 +128,9 @@ public class TasksListFormE1 extends Form {
         });
                  
                  
+                 
+                 
+                 
                 //  Button Avis= new Button("Avis");
                 
                   
@@ -150,11 +160,18 @@ public class TasksListFormE1 extends Form {
                 add(C5);
                              this.getToolbar().addCommandToLeftBar("Return", null, (evt) -> {
             previous.showBack();
-        });     
+        }); 
+                             
+                             
             }
-        }
+       
     }
+  
         
     }
-
+    
+    }
+    
+        
+    
 
