@@ -36,7 +36,7 @@ import java.util.List;
  */
 public class TasksListForm1 extends Form {
    public TasksListForm1(Form previous) {
-        
+        setUIID("club");
        setTitle("les clubs");
         //etToolbar().addCommandToLeftBar("back", null, e -> new WalkthruForm(res).show());
        // getToolbar().addCommandToRightBar("Reclamer", null, e -> new HomeReclamation(theme).show());

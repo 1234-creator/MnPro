@@ -24,7 +24,7 @@ import com.codename1.ui.util.Resources;
 public class ParticiperEvent extends Form{
    public ParticiperEvent(Form previous,Event e) {
           TaskServiceE taskServiceE = new TaskServiceE();
-
+setUIID("parti");
   taskServiceE.ParticiperEvent(e);
          Container C1 = new Container(new BoxLayout(BoxLayout.Y_AXIS));
          Container C2 = new Container(new BoxLayout(BoxLayout.X_AXIS));

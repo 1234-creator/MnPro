@@ -55,7 +55,7 @@ public class TasksListFormE1 extends Form {
          EncodedImage imc;
         Image img;
         ImageViewer imv;
-        
+         setUIID("event");
         setTitle("les events");
         //etToolbar().addCommandToLeftBar("back", null, e -> new WalkthruForm(res).show());
        // getToolbar().addCommandToRightBar("Reclamer", null, e -> new HomeReclamation(theme).show());

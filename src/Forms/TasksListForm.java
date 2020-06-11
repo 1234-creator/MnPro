@@ -56,7 +56,7 @@ public class TasksListForm extends Form {
          EncodedImage imc;
         Image img;
         ImageViewer imv;
-        
+        setUIID("affi");
         setTitle("les clubs");
         //etToolbar().addCommandToLeftBar("back", null, e -> new WalkthruForm(res).show());
        // getToolbar().addCommandToRightBar("Reclamer", null, e -> new HomeReclamation(theme).show());

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resource majorVersion="1" minorVersion="11" useXmlUI="false">
+    <image name="1.png"  />
+    <image name="2.png"  />
+    <image name="3.png"  />
+    <image name="5.png"  />
+    <image name="6.PNG"  />
+    <image name="bleu.jpg"  />
+    <theme name="Theme">
+        <val key="@includeNativeBool" value="true" />
+        <val key="a.bgImage" value="1.png" />
+        <val key="a.bgType" value="1" />
+        <val key="ab.bgImage" value="3.png" />
+        <val key="ab.bgType" value="1" />
+        <val key="aff.bgImage" value="1.png" />
+        <val key="aff.bgType" value="1" />
+        <val key="affi.bgImage" value="1.png" />
+        <val key="affi.bgType" value="1" />
+        <val key="b.bgImage" value="1.png" />
+        <val key="b.bgType" value="1" />
+        <val key="club.bgImage" value="3.png" />
+        <val key="club.bgType" value="1" />
+        <val key="event.bgImage" value="3.png" />
+        <val key="event.bgType" value="1" />
+        <val key="hom.bgImage" value="1.png" />
+        <val key="hom.bgType" value="1" />
+        <val key="part.bgImage" value="3.png" />
+        <val key="part.bgType" value="1" />
+        <val key="parti.bgImage" value="3.png" />
+        <val key="parti.bgType" value="1" />
+    </theme>
+</resource>

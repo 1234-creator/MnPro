@@ -24,7 +24,7 @@ import com.codename1.ui.util.Resources;
 public class ParticiperClub extends Form{
    public ParticiperClub(Form previous,Club c) {
           TaskService taskService = new TaskService();
-       
+     setUIID("part");  
   taskService.ParticiperClub(c);
          Container C1 = new Container(new BoxLayout(BoxLayout.Y_AXIS));
          Container C2 = new Container(new BoxLayout(BoxLayout.X_AXIS));

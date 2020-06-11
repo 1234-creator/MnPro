@@ -10,6 +10,7 @@ import Services.TaskService;
 import com.codename1.messaging.Message;
 import com.codename1.notifications.LocalNotification;
 import com.codename1.ui.Button;
+import com.codename1.ui.ComboBox;
 import com.codename1.ui.Command;
 import com.codename1.ui.Dialog;
 import com.codename1.ui.Display;
@@ -29,21 +30,22 @@ public class AddTaskForm extends Form {
 
     public AddTaskForm(Form previous) {
         super("Ajouter un club", BoxLayout.y());
-
+    setUIID("aff");
         TextField nomclub = new TextField(null, "Nom Club");
-        TextField activite = new TextField(null, "Activite");
+        ComboBox activite = new ComboBox("Sportif","Culturel","Humain");
+        //TextField activite = new TextField(null, "Activite");
          TextField effectif = new TextField(null, "effectif");
-        
+       // AbonneResto a = new AbonneResto(tfNom.getSelectedItem().toString(),tfTypeAbo.getSelectedItem().toString(),tfTypePension.getSelectedItem().toString());
         
         Button btn = new Button("Ajouter le club");
         
 
         btn.addActionListener((evt) -> {
-            if ((nomclub.getText().length() == 0) || (activite.getText().length() == 0)) {
+            if ((nomclub.getText().length() == 0) || (activite.getSelectedItem().toString().length() == 0)) {
                 Dialog.show("Alert", "Please fill all the fields", "OK", null);
             } else {
                 try {
-                    Club c = new Club(nomclub.getText(),activite.getText(),Integer.parseInt(effectif.getText()));
+                    Club c = new Club(nomclub.getText(),activite.getSelectedItem().toString(),Integer.parseInt(effectif.getText()));
                     if (new TaskService().addTask(c)) {
                         Dialog.show("SUCCESS", "Club ajouté", "OK", null);
                     } else {

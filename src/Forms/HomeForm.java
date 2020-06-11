@@ -33,13 +33,14 @@ public class HomeForm extends SideMenuBaseForm {
 
     public HomeForm() {
         super("Home", BoxLayout.y());
-        
+        setUIID("hom");
         Button btnAddTask = new Button("Ajouter un Club");
          Button btnAddTaskE = new Button("Ajouter un Event");
         Button btnTasksList = new Button("Lister les clubs");
         Button btnTasksListE = new Button("Lister les events");
       Button btnTasksList1 = new Button("Participer a un club");
        Button btnTasksList2 = new Button("Participer a un event");
+     
         btnAddTask.addActionListener((evt) -> {
             new AddTaskForm(this).show();
         });
@@ -58,6 +59,7 @@ public class HomeForm extends SideMenuBaseForm {
              btnTasksList2.addActionListener((evt) -> {
             new TasksListFormE1(this).show();
         });
+              
           
  this.addAll(new Label(""), btnAddTask, btnTasksList, btnTasksList1, btnTasksListE, btnAddTaskE,  btnTasksList2); 
 

@@ -13,6 +13,7 @@ import com.codename1.io.NetworkManager;
 import com.codename1.messaging.Message;
 import com.codename1.notifications.LocalNotification;
 import com.codename1.ui.Button;
+import com.codename1.ui.ComboBox;
 import com.codename1.ui.Command;
 import com.codename1.ui.Dialog;
 import com.codename1.ui.Display;
@@ -34,10 +35,13 @@ import java.util.Date;
 public class AddTaskFormE extends Form {
 
     public AddTaskFormE(Form previous) {
+        
         super("Ajouter un event", BoxLayout.y());
-
+        
+        setUIID("b");
         TextField nome= new TextField(null, "Nom event");
-        TextField activite = new TextField(null, "categorie");
+       // TextField activite = new TextField(null, "categorie");
+        ComboBox activite = new ComboBox("Quran","Musique","Theatre");
          TextField effectif = new TextField(null, "nbrPlace");
          PickerComponent datePicker = PickerComponent.createDate(new Date());
          TextField desc = new TextField(null, "description");
@@ -50,11 +54,11 @@ public class AddTaskFormE extends Form {
         
 
         btn.addActionListener((evt) -> {
-            if ((nome.getText().length() == 0) || (activite.getText().length() == 0)) {
+            if ((nome.getText().length() == 0) || (activite.getSelectedItem().toString().length() == 0)) {
                 Dialog.show("Alert", "Please fill all the fields", "OK", null);
             } else {
                 try {
-                    Event e = new Event(nome.getText(),activite.getText(),Integer.parseInt(effectif.getText()),desc.getText(),adr.getText());
+                    Event e = new Event(nome.getText(),activite.getSelectedItem().toString(),Integer.parseInt(effectif.getText()),desc.getText(),adr.getText());
                     if (new TaskServiceE().addTask(e)) {
                         Dialog.show("SUCCESS", "Event ajouté", "OK", null);
                     } else {
