@@ -50,8 +50,8 @@ public class ParticiperEvent extends Form{
                 C1.add(C4);
                 C5.add(bb);
                 C1.add(C5);
-                C6.add(date);
-                C1.add(C6);
+               // C6.add(date);
+              //  C1.add(C6);
                  C7.add(adr);
                 C1.add(C7);
                add(C1);

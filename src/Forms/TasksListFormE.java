@@ -104,7 +104,7 @@ public class TasksListFormE extends Form {
                 C3.add(cat);
                 C4.add(branche);
                 C6.add(adr);
-                C7.add(date);
+               // C7.add(date);
                C8.add(ligne);
               // C4.add(branche);
               

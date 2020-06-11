@@ -111,9 +111,10 @@ public class TasksListForm extends Form {
                            Dialog.show("ERROR","Veuillez réessayer","ok",null); 
                         }
                       new TasksListForm(previous).show();
+                     //  TaskService.getInstance().NotClub(club);
             });
                     
-        
+          
         
          Button modifier = new Button("modifier");
           modifier.addActionListener(a->{
@@ -170,7 +171,7 @@ public class TasksListForm extends Form {
             //    C1.add(branche);
                 C6.add(supprimer);
                 C6.add(modifier);
-              //  C6.add(notif);
+              // C6.add(notif);
                 C6.add(ligne);
                C4.add(branche);
               //  C5.add(C1);
@@ -186,7 +187,12 @@ public class TasksListForm extends Form {
                  
                     
          
-          stat.addActionListener(a->{
+   
+      
+             
+    }      
+                 
+            stat.addActionListener(a->{
                Form me=new Form("Nos clubs", new BorderLayout());
            double[] values = new double[]{18,36,2,5,9};
 int valu=club.getEffectif();
@@ -209,24 +215,14 @@ int valu=club.getEffectif();
               
                // mcnt.add(nbrating);
                   PieChart chart = new PieChart(buildCategoryDataset("Nos clubs", values), renderer); 
-                
-                
-             
-                
-                
-                ChartComponent c = new ChartComponent(chart);  
+          ChartComponent c = new ChartComponent(chart);  
     me.add(BorderLayout.CENTER, c);
    
                 
            me.getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e-> previous.showBack());
              me.show();        
                 
-            });
-      
-             
-    }      
-                 
-                 
+            });            
             }
         }
         
@@ -250,7 +246,7 @@ int valu=club.getEffectif();
     CategorySeries series = new CategorySeries(title);
     int k = club.getEffectif();
     for (double club : clubs) {
-        series.add("Project " + ++k,club);
+        series.add("" + ++k,club);
     }
 
     return series;
