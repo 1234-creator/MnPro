@@ -195,6 +195,7 @@ public class TasksListForm extends Form {
             stat.addActionListener(a->{
                Form me=new Form("Nos clubs", new BorderLayout());
            double[] values = new double[]{18,36,2,5,9};
+             
 int valu=club.getEffectif();
     // Set up the renderer
     int[] colors = new int[]{ColorUtil.BLUE, ColorUtil.GREEN, ColorUtil.MAGENTA, ColorUtil.YELLOW, ColorUtil.CYAN};
