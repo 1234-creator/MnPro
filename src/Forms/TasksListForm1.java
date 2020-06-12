@@ -131,6 +131,7 @@ public class TasksListForm1 extends Form {
                   Form f1 = new Form(BoxLayout.y()); 
                  
                   Label titre = new Label("                Liste des clubs","WelcomeBlue");
+                 
                    f1.add(titre);
                  
         //TaskService taskService = new TaskService();
